@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\PagesController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UsersController;
+use App\Http\Controllers\TopicsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,3 +47,7 @@ Route::post('email/resend', 'Auth\VerificationController@resend')->name('verific
 //代替结束**************
 
 Route::resource('users', UsersController::class, ['only' => ['show', 'update', 'edit']]);
+
+Route::resource('topics', TopicsController::class, ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
+
+Route::resource('topics', 'TopicsController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
