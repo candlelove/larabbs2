@@ -25,6 +25,7 @@ Route::get('/', [PagesController::class, 'root'])->name('root');
 
 // 用户身份验证相关的路由
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+// Route::get('login1', 'Auth\LoginController@showLoginForm')->name('login1');
 Route::post('login', 'Auth\LoginController@login');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
@@ -45,3 +46,5 @@ Route::post('email/resend', 'Auth\VerificationController@resend')->name('verific
 //代替结束**************
 
 Route::resource('users', UsersController::class, ['only' => ['show', 'update', 'edit']]);
+
+Route::resource('topics', 'TopicsController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
