@@ -11,6 +11,7 @@ class TopicFactory extends Factory
 
     public function definition()
     {
+<<<<<<< HEAD
         $sentence = $this->faker->sentence();
         return [
             'title' => $sentence,
@@ -19,6 +20,10 @@ class TopicFactory extends Factory
             'user_id'=> $this->faker->randomElement([1,2,3,4,5,6,7,8,9,10]),
             'category_id' => $this->faker->randomElement([1,2,3,4]),
 
+=======
+        return [
+            // $this->faker->name,
+>>>>>>> 1a55da6e86835d22ff4e1b25ce1da26b5a93b07c
         ];
     }
 }
