@@ -47,12 +47,8 @@ Route::get('email/verify/{id}/{hash}', 'Auth\VerificationController@verify')->na
 Route::post('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
 //代替结束**************
 
-Route::resource('users', UsersController::class, ['only' => ['show', 'update', 'edit']]);
+Route::resource('users', 'UsersController', ['only' => ['show', 'update', 'edit']]);
 
-<<<<<<< HEAD
-Route::resource('topics', 'TopicsController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
-=======
-Route::resource('topics', TopicsController::class, ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
 
 Route::resource('topics', 'TopicsController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
->>>>>>> 1a55da6e86835d22ff4e1b25ce1da26b5a93b07c
+
