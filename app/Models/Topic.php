@@ -32,15 +32,14 @@ class Topic extends Model
                 break;
 
         }
+    }
+    public function scopeRecentReplied($query)
+    {
+        return $query->orderBy('updated_at','desc');
+    }
 
-        public function scopeRecentReplied($query)
-        {
-            return $query->orderBy('updated_at','desc');
-        }
-
-        public function scopeRecent($query)
-        {
-            return $query->orderBy('created_at','desc');
-        }
+    public function scopeRecent($query)
+    {
+        return $query->orderBy('created_at','desc');
     }
 }
